@@ -281,6 +281,17 @@ nav {
     background: var(--bg-gradient-light);
     position: relative;
 }
+.about::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    /* This SVG creates a curve at the bottom of the section */
+    /* background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100"><path d="M0,0 C300,80 900,80 1200,0 L1200,100 L0,100 Z" fill="%23FF8C00"/></svg>') no-repeat center bottom; */
+    background-size: 100% 100%;
+}
 
 .section-title {
     text-align: center;
@@ -391,17 +402,6 @@ nav {
     background: var(--bg-gradient-brand);
     color: var(--text-light);
     position: relative;
-}
-
-.services::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 100px;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100"><path d="M0,0 C300,80 900,80 1200,0 L1200,100 L0,100 Z" fill="%23e9ecef"/></svg>') no-repeat center top;
-    background-size: cover;
 }
 
 .services-grid {
