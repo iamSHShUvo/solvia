@@ -26,7 +26,7 @@
                 <li><a href="#services">Services</a></li>
                 <li><a href="#team">Team</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="#" class="bayan-link btn-nav">Visit Bayan →</a></li>
+                <li><a href="https://www.bayanmanpower.com" target="_blank" rel="noopener noreferrer" class="bayan-link btn-nav">Visit Bayan →</a></li>
             </ul>
             <div class="mobile-menu" id="mobileMenu">
                 <span></span>
@@ -212,13 +212,13 @@
                 <p>Partner with Solvia to access the finest hospitality professionals in Saudi Arabia. Our commitment to luxury service standards ensures your establishment delivers unforgettable guest experiences that exceed expectations.</p>
                 <div class="cta-buttons">
                     <a href="https://mail.google.com/mail/?view=cm&fs=1&to=solviahospitality@gmail.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Start Your Partnership</a>
-                    <a href="#" class="btn btn-secondary bayan-link">Visit Bayan Manpower →</a>
+                    <a href="https://www.bayanmanpower.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary bayan-link">Visit Bayan Manpower →</a>
                 </div>
                 
                 <div class="bayan-showcase">
                     <h4>Need General Hospitality & Healthcare Staff?</h4>
                     <p style="font-size: 1.1rem; margin-bottom: 20px;">Visit our partner company <strong>Bayan Manpower</strong> for comprehensive staffing solutions including hotels, restaurants, and healthcare facilities.</p>
-                    <a href="#" class="bayan-link">Explore Bayan Manpower →</a>
+                    <a href="https://www.bayanmanpower.com" target="_blank" rel="noopener noreferrer" class="bayan-link">Explore Bayan Manpower →</a>
                 </div>
             </div>
         </div>
@@ -229,7 +229,7 @@
         <div class="container">
             <h2 class="section-title fade-in">Get a Custom Quote</h2>
             <p class="section-subtitle fade-in">Tell us about your staffing needs, and we'll provide a tailored solution.</p>
-            <form id="quote-form" class="contact-form fade-in">
+            <form id="quote-form" class="contact-form fade-in" name="quote" method="POST" data-netlify="true">
                 <div class="form-grid">
                     <div class="form-group">
                         <label for="form-name">Your Name</label>
@@ -271,24 +271,6 @@
             </form>
         </div>
     </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-info">
-                    <div class="footer-brand">SOLVIA سولڤيا</div>
-                    <p>&copy; 2024 Solvia Hospitality. All rights reserved.</p>
-                </div>
-                <div class="footer-tagline">
-                    <p>Luxury Hospitality Excellence | Premium Staffing Solutions | Saudi Arabia</p>
-                    <div class="footer-bayan-link">
-                        <a href="#" class="bayan-link">Visit Bayan Manpower →</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
 
     <script>
         // Loading Animation
@@ -406,50 +388,9 @@
             });
         }
 
-        // Add hover effects for Bayan links
-        document.querySelectorAll('.bayan-link').forEach(link => {
-            // Add click handler (replace with actual Bayan URL)
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                // Replace 'bayan-website-url' with the actual URL of Bayan website
-                // window.open('https://bayan-website-url.com', '_blank');
-                alert('Replace this with actual Bayan website URL:\n\nwindow.open("https://your-bayan-domain.com", "_blank");');
-            });
-        });
-
-        // Form Submission to Gmail
-        document.getElementById('quote-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            const name = document.getElementById('form-name').value;
-            const company = document.getElementById('form-company').value;
-            const email = document.getElementById('form-email').value;
-            const phone = document.getElementById('form-phone').value;
-            const service = document.getElementById('form-service').value;
-            const message = document.getElementById('form-message').value;
-
-            const subject = `New Staffing Request from ${company}`;
-            
-            const body = `
-A new staffing request has been submitted through the website.
-
---- Client Details ---
-Name: ${name}
-Company: ${company}
-Email: ${email}
-Phone: ${phone}
-
---- Service Required ---
-${service}
-
---- Message ---
-${message}
-            `;
-
-            const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=solviahospitality@gmail.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-            
-            window.open(gmailUrl, '_blank');
-        });
+        // The form submission is now handled entirely by Netlify's servers
+        // because of the `data-netlify="true"` attribute in the HTML form tag.
+        // No extra JavaScript is needed for it to work!
     </script>
 </body>
 </html>
