@@ -155,7 +155,7 @@ nav {
     width: 220px;
     height: 140px;
     margin: 0 auto 30px;
-    background: rgba(0, 0, 0, 0.25);
+    background: rgb(255, 255, 255);
     backdrop-filter: blur(10px);
     border-radius: 25px;
     box-shadow: 0 15px 35px rgba(0,0,0,0.2);
@@ -171,7 +171,7 @@ nav {
 .hero-logo {
     max-width: 100%;
     height: auto;
-    filter: brightness(0) invert(1);
+    
 }
 
 .hero-content h1 {
@@ -261,11 +261,18 @@ nav {
 }
 
 .btn-nav {
-    background: var(--brand-secondary);
-    color: var(--text-light);
+    background: var(--text-light);
+    color: var(--brand-primary);
     padding: 8px 15px;
     border-radius: 20px;
     font-weight: bold;
+    border: 2px solid var(--brand-secondary);
+}
+
+.btn-nav:hover {
+    background: var(--brand-secondary);
+    color: var(--text-light);
+    transform: translateY(-2px); /* Keep the transform from the general link hover */
 }
 
 /* About Section */
@@ -620,6 +627,11 @@ nav {
     border: 2px solid rgba(255,184,77,0.3);
 }
 
+.bayan-showcase-text {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
 .cta-section .bayan-showcase {
     margin-top: 40px;
     padding: 30px;
@@ -669,11 +681,16 @@ footer {
     gap: 20px;
 }
 
-.footer-brand {
-    font-size: 1.6rem;
-    font-weight: bold;
-    color: var(--brand-secondary);
-    margin-bottom: 10px;
+.footer-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-logo {
+    height: 50px;
+    margin-bottom: 5px;
 }
 
 .footer-tagline {
@@ -845,19 +862,19 @@ footer {
         border-bottom-right-radius: 15px;
     }
 
-    .nav-links.active {
+    .nav-links.active { /* This ensures the menu is visible when active */
         display: flex;
     }
 
     .nav-links a {
         padding: 12px 0;
         border-bottom: 1px solid rgba(255,255,255,0.2);
-        text-align: center;
         font-size: 1.1rem;
         color: var(--text-light);
+        text-align: center;
     }
 
-    .nav-links a:last-child {
+    .nav-links .btn-nav { /* More robust selector for the button */
         border-bottom: none;
         margin-top: 10px;
         background: rgba(255,255,255,0.2);
@@ -996,7 +1013,7 @@ footer {
     .footer-content {
         flex-direction: column;
         text-align: center;
-        gap: 15px;
+        gap: 30px;
     }
 
     .brand-text {
